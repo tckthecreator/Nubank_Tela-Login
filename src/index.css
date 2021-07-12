@@ -1,6 +1,8 @@
 :root {
   --roxo: #820ad1;
   --branco: #f4f4f4;
+  --cinza: #a0a0a0;
+  --button-color: rgba(160, 160, 160, 0.4)
 }
 
 body {

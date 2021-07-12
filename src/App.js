@@ -1,8 +1,5 @@
 import React from 'react';
 
-//CSS
-import './App.css';
-
 //Componentes
 import MenuInicial from './components/MenuInicial';
 
