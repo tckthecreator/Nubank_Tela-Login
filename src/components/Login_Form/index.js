@@ -2,6 +2,7 @@ import React from 'react'
 
 // Funções JavaScript;
 import {validarCPF} from './validarCPF';
+import { inputHasFocus} from './visualDetails';
 
 //CSS
 import styled from 'styled-components';
@@ -24,7 +25,7 @@ const Form = styled.form`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
 
     border-radius: 10px;
 `;
@@ -48,6 +49,13 @@ const InputDiv = styled.div`
     flex-direction: column;
 `;
 
+
+const Label = styled.label`
+    color: var(--cinza);
+    font-weight: 500;
+    font-size: 18px;
+`;
+
 const InputLogin = styled.input`
     outline: 0;
     border: 0;
@@ -57,20 +65,6 @@ const InputLogin = styled.input`
 
     width: 310px;
     height: 30px;
-
-    &:focus {
-        border-bottom: 1.5px var(--roxo) dotted
-    }
-`;
-
-const Label = styled.label`
-    color: var(--cinza);
-    font-weight: 500;
-    font-size: 16px;
-
-    ${InputLogin}:focus&{
-        color: var(--roxo);
-    }
 `;
 
 const LoginButton = styled.button`
@@ -115,15 +109,36 @@ function Login_Form() {
             <TextDoLogin>Faça seu login</TextDoLogin>
             <InputContainer>
                 <InputDiv>
-                    <Label>CPF</Label>
-                    <InputLogin id='cpf-input' type='text' maxLength='11' onChange={validarCPF} />
+                    <Label
+                        id={'cpf-label'}
+                    >CPF</Label>
+                    <InputLogin 
+                        id='cpf-input' 
+                        class='input' 
+                        type='text'
+                        maxLength='11' 
+                        onChange={validarCPF}
+                        onFocus={() => inputHasFocus(`cpf`, true)}
+                        onBlur={() => inputHasFocus(`cpf`, false)}
+                    />
                 </InputDiv>
                 <InputDiv>
-                    <Label>Senha</Label>
-                    <InputLogin type='password' />
+                    <Label
+                        id='senha-label'
+                    >Senha
+                    </Label>
+                    <InputLogin 
+                        id='senha-input'
+                        type='password'
+                        onFocus={() => inputHasFocus(`senha`, true)}
+                        onBlur={() => inputHasFocus(`senha`, false)}
+                    />
                 </InputDiv>
             </InputContainer>
-            <LoginButton>Continuar</LoginButton>
+            <LoginButton
+                id='button-submit'
+                disabled
+            >Continuar</LoginButton>
             <LinkDiv>
                 <Link href='/'>Esqueci minha senha</Link>
                 <Link href='/'>Ainda não sou cliente</Link>
