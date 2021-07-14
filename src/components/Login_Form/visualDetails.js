@@ -2,7 +2,7 @@
  *  Aqui vamos aplicar os UX Effects da aplicação.
  */
 
-
+// Se o input estiver em foco, ele mudará para a cor Roxa. Quando perder o foco, voltará para sua cor original.
 export const inputHasFocus = (type, focus) => {
     const id_input = `${type}-input`;
     const id_label = `${type}-label`;
@@ -19,4 +19,3 @@ export const inputHasFocus = (type, focus) => {
         console.log('something wrong');
     }
 }
-
