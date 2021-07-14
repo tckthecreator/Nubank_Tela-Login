@@ -17,5 +17,5 @@
 
 ##### Ou acessar localmente: 
 1. Acesse o terminal e execute: git clone https://github.com/tckthecreator/nubank_tela-login.git
-2. Clique com o botão direito no index.html e aperte em Copy Path
-3. Cole em uma guia no seu navegador
+2. Ainda no terminal, execute: npm start. Ou se preferir, execute Yarn start.
+3. O servidor em tempo real abrirá em seu navegador padrão no endereço http://localhost:3000.
