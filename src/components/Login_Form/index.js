@@ -28,7 +28,7 @@ const Form = styled.form`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
 
     border-radius: 10px;
 `;
@@ -114,16 +114,16 @@ const Link = styled.a`
 
 function Login_Form() {
     return (
-        <Form>
-            <TextDoLogin>Faça seu login</TextDoLogin>
-            <InputContainer>
-                <InputDiv>
+        <Form id='form-component'>
+            <TextDoLogin id='text-do-login'>Faça seu login</TextDoLogin>
+            <InputContainer id='input-container'>
+                <InputDiv id='input-div'>
                     <Label
                         id='cpf-label'
                     >CPF</Label>
                     <InputLogin 
                         id='cpf-input' 
-                        class='input' 
+                        className='input' 
                         type='text'
                         minLength='11'
                         maxLength='11' 
@@ -137,10 +137,10 @@ function Login_Form() {
                 <InputDiv>
                     <Label
                         id='senha-label'
-                    >Senha
-                    </Label>
+                    >Senha</Label>
                     <InputLogin 
                         id='senha-input'
+                        className='input'
                         type='password'
                         minLength='8'
                         onFocus={() => inputHasFocus(`senha`, true)}
@@ -153,7 +153,7 @@ function Login_Form() {
                 id='button-submit'
             >Continuar
             </LoginButton>
-            <LinkDiv>
+            <LinkDiv id='link-div'>
                 <Link href='/'>Esqueci minha senha</Link>
                 <Link href='/'>Ainda não sou cliente</Link>
             </LinkDiv>

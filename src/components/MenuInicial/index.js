@@ -10,6 +10,7 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: var(--roxo);
+    
 `;
 const Logo = styled.img`
     width: 120px;
@@ -20,7 +21,7 @@ const Logo = styled.img`
 function MenuInicial() {
     return (
         <Container>
-            <Logo src='assets/nu-logo.png'  alt='Logo' />
+            <Logo id='logo' src='assets/nu-logo.png'  alt='Logo' />
             <LoginForm />
         </Container>
     );
